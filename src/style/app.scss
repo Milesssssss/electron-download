@@ -1,0 +1,88 @@
+
+$taskWidth: 120px;
+$taskIndex: 10000;
+.download-tasks {
+    $taskHeight: 40px;
+    $bgColor: #eee;
+    $borderColor: darken($bgColor, 18);
+
+    z-index: $taskIndex;
+    overflow-x: visible;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: $taskWidth;
+    height: 100%;
+    line-height: $taskHeight;
+
+    background: $bgColor;
+    border: 1px solid $borderColor;
+
+    transition: all .3s;
+    transform: translateX(0);
+    will-change: transfrom;
+
+    &.hidden {
+        transform: translateX(100%);
+    }
+
+    $gap: 4px;
+    .download-task {
+        display: flex;
+        align-items: flex-end;
+        align-content: flex-start;
+        box-sizing: border-box;
+        padding: 0 4px;
+        margin: $gap 4px;
+        overflow: hidden;
+
+        height: $taskHeight - $gap*2;
+        line-height: $taskHeight - $gap*2;
+
+        border-radius: 4px;
+        border: 1px solid $borderColor;
+        font-size: 12px;
+
+        cursor: pointer;
+    }
+
+    .download-progress {
+        float: left;
+        width: 50px;
+    }
+
+    .download-name {
+        max-width: 100px;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .btn {
+        margin: $gap;
+        padding: 0 4px;
+        color: #13A3A9;
+        border: 2px solid #13A3A9;
+        border-radius: 4px;
+    }
+}
+
+
+.download-menu {
+    z-index: $taskIndex;
+    position: fixed;
+    right: 20px;
+    top: 10px;
+
+    cursor: pointer;
+    color: #13A3A9;
+
+    transition: all .2s;
+    &.active {
+        right: 20px + $taskWidth
+    }
+}

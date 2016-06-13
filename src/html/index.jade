@@ -1,0 +1,41 @@
+doctype
+html(lang="zh-cn")
+    head
+        meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+
+        title test download
+
+        link(rel="stylesheet", type="text/css", href="lib/normalize.min.css")
+        link(rel="stylesheet", href="lib/fontawesome/css/font-awesome.min.css")
+        link(rel="stylesheet", href="lib/animate.min.css")
+        link(rel="stylesheet", href="app.css")
+
+    body
+
+        h2 test download
+
+        a(href="http://down11.xitongxz.com/Ylmf_Ghost_Win7_SP1_x64_2016_0512.iso") 下载
+        br
+        br
+        br
+        a(href="http://apk.hiapk.com/web/api.do?qt=8051&id=722") apk文件
+
+        script.
+            if (typeof module === 'object') {
+                window.module = module;
+                module = undefined;
+            }
+        script(src='lib/jquery-1.11.1.min.js')
+
+        script.
+            if (window.module) module = window.module;
+            const {ipcRenderer, shell} = require('electron')
+
+        script(src='lib/path.min.js')
+        script(src='lib/lodash.min.js')
+        script(src='jj.js')
+        script(src='setup.js')
+        script(src = 'app.js')
+        script.
+            initDownloadCenter()
